@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Hi </h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput placeholder="Ex. Why am I so handsome ?" [(ngModel)]="postData.title">
+  </mat-form-field>
+  <p>What's are you thinking?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Content</mat-label>
+    <textarea matInput [(ngModel)]="postData.content" placeholder="I am handsome af">
+    </textarea>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="addPost()" [mat-dialog-close]="postData" cdkFocusInitial>Ok</button>
+</div>

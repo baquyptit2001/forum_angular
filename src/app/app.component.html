@@ -1,7 +1,14 @@
 <nav mat-tab-nav-bar mat-align-tabs="center">
   <a mat-tab-link [routerLink]="''">Home</a>
   <a mat-tab-link [routerLink]="'post'">Post</a>
-  <a mat-tab-link [routerLink]="'account'">Account</a>
+  <a *ngIf="!isLoggedIn" mat-tab-link [routerLink]="'account'">Account</a>
+  <a *ngIf="isLoggedIn" mat-tab-link>
+    <button mat-button [matMenuTriggerFor]="menu">{{ user.name }}</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Profile</button>
+      <button mat-menu-item (click) = "logOut()">Log out</button>
+    </mat-menu>
+  </a>
 </nav>
 <button mat-fab color="accent" class="add-question" (click)="openAddPostForm()">
   <mat-icon>add</mat-icon>

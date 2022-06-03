@@ -25,6 +25,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import { IndexComponent } from './user/index/index.component';
 import {CookieService} from "ngx-cookie-service";
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import {CookieService} from "ngx-cookie-service";
     MatInputModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatMenuModule,
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

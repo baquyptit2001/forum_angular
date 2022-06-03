@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
     password_confirmation: new FormControl(''),
   });
 
-  constructor( private userService: UserService, public _snackBar: MatSnackBar) { }
+  constructor( private userService: UserService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
